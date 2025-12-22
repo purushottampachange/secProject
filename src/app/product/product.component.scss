@@ -1,0 +1,14 @@
+
+.prodCard img{
+
+    height: 200px;
+    object-fit: contain;
+}
+
+.prodCard .prodDesc{
+    
+    padding: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

@@ -1,0 +1,42 @@
+
+<div class="container mt-4">
+  <div class="row">
+    <div
+      class="col-sm-6 col-md-4 col-lg-3 mb-4"
+      *ngFor="let product of prodArr"
+    >
+      <div class="card h-100 prodCard">
+        <img
+          [src]="product.image"
+          class="card-img-top p-3"
+          [alt]="product.title"
+        />
+
+        <p class="p-2 prodDesc">
+            {{product.description}}
+        </p>
+
+        <div class="card-body">
+          <h6 class="card-title text-truncate">
+            {{ product.title }}
+          </h6>
+
+          <p class="text-success">
+            RS : {{ product.price }}
+          </p>
+
+          <p class="mb-2">
+             Rating :  {{ product.rating.rate }}
+            <small class="text-muted">
+              ({{ product.rating.count }})
+            </small>
+          </p>
+
+          <button class="btn btn-primary btn-sm btn-block mt-3">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
