@@ -12,3 +12,22 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+.prodCard{
+
+    transition: all .4s ease-in-out;
+   
+}
+
+.prodCard:hover{
+
+     box-shadow: 5px 10px 10px #888888;
+     transform: scale(1.001);
+}
+
+.prodCard .card-body h6{
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

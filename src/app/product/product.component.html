@@ -1,40 +1,39 @@
-
 <div class="container mt-4">
   <div class="row">
-    <div
-      class="col-sm-6 col-md-4 col-lg-3 mb-4"
-      *ngFor="let product of prodArr"
-    >
+    <div class="col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let product of prodArr">
       <div class="card h-100 prodCard">
-        <img
-          [src]="product.image"
-          class="card-img-top p-3"
-          [alt]="product.title"
-        />
+        <img [src]="product.image" class="card-img-top p-3" [alt]="product.title" />
 
         <p class="p-2 prodDesc">
-            {{product.description}}
+          {{product.description}}
         </p>
 
         <div class="card-body">
-          <h6 class="card-title text-truncate">
+          <h6>
             {{ product.title }}
           </h6>
 
           <p class="text-success">
-            RS : {{ product.price }}
+             $ {{ product.price }}
           </p>
 
           <p class="mb-2">
-              ⭐ {{ product.rating.rate }}
-            <small class="text-muted">
+            ⭐ {{ product.rating.rate }}
+            <small class="text-secondary">
               ({{ product.rating.count }})
             </small>
           </p>
 
-          <button class="btn btn-sm btn-block mt-3" mat-raised-button color="primary">
-            Add to Cart
-          </button>
+          <div class="d-flex justify-content-between">
+            <button class="btn btn-sm btn-block mt-3 mr-2" mat-raised-button color="primary">
+              Buy Now
+            </button>
+
+            <button class="btn btn-sm btn-block mt-3" mat-raised-button color="primary">
+              Add to Cart
+            </button>
+          </div>
+
         </div>
       </div>
     </div>
