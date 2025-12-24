@@ -1,0 +1,101 @@
+<div class="row my-3">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header text-center">
+                <h5>
+                    Show Text
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="my-5">
+                    <input #product type="text" class="form-control">
+                </div>
+
+                <button (click)="onBtnClick(product)" class="btn btn-sm btn-primary mb-4">show Text</button>
+
+                <p *ngIf="searchText" [innerHTML]="searchText" class="alert alert-info">
+
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row my-3">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header text-center">
+                <h5>
+                    Show Text
+                </h5>
+            </div>
+            <div class="card-body">
+                <input (keyup)="onSearch($event)" type="text" class="form-control my-4" placeholder="enter text">
+                <p *ngIf="searchtext1" class="alert alert-success">
+                    {{searchtext1}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row my-3">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header text-center">
+                <h5>
+                    Reverse Text
+                </h5>
+            </div>
+            <div class="card-body">
+                <input (keyup)="onSearch2($event)" type="text" class="form-control my-4" placeholder="enter text">
+
+                <p *ngIf="searchtext2" [innerHTML]="searchtext2" class="alert alert-warning">
+
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header text-center">
+                <h5>
+                    Show Greet
+                </h5>
+            </div>
+            <div class="card-body">
+                <input (keyup)="onSearch3($event)" type="text" class="form-control my-3">
+                <p *ngIf="searchtext3" class="alert alert-info">
+                    hi welcome {{searchtext3}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row my-3">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header text-center">
+                <h5>
+                    Show Text
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="my-5">
+                    <input #product1 type="text" class="form-control">
+                </div>
+
+                <button (click)="onSearch4(product1)" class="btn btn-sm btn-primary mb-4">show Text</button>
+
+                <p *ngIf="searchtext4" [innerHTML]="searchtext4" class="alert alert-info">
+
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

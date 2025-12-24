@@ -6,6 +6,8 @@ import { ProductComponent } from './product/product.component';
 import { ProductComponent2 } from './product2/product2.component';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DatabindingComponent } from './databinding/databinding.component';
+import { EventBindingComponent } from './event-binding/event-binding.component';
 
 
 @NgModule({
@@ -13,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     ProductComponent,
     ProductComponent2,
+    DatabindingComponent,
+    EventBindingComponent,
 
   ],
   imports: [
