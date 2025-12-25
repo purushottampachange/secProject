@@ -37,6 +37,7 @@
                             </button>
 
                             <button 
+                            [disabled] = "isEditMode"
                             (click)="onTudoRemove(tudo.tudoId)"
                             mat-icon-button color="warn">
                                 <mat-icon>delete</mat-icon>
