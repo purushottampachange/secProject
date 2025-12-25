@@ -1,0 +1,50 @@
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="tudoInput">Enter Tudo</label>
+                    <input 
+                    #tudoInput
+                    type="text" class="form-control" id="tudoInput">
+                </div>
+                <button 
+                (click) = "onAddTudo()"
+                *ngIf="!isEditMode" class="btn btn-block" mat-stroked-button color="primary">Add Tudo</button>
+                <button *ngIf="isEditMode" 
+                (click) = "onEditedTudo()"
+                class="btn btn-block" mat-stroked-button color="accent">Update Tudo</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <ul 
+                *ngIf = "tudoArr.length > 0 ; else noTudo"
+                class="list-group">
+                    <li 
+                    *ngFor="let tudo of tudoArr; trackBy : trackById"
+                    class="list-group-item d-flex justify-content-between align-items-center">
+                        <strong>{{tudo.tudoItem}}</strong>
+                        <div>
+                            <button 
+                            (click) = "onTudoEdit(tudo)"
+                            class="btn btn-sm mr-1" mat-stroked-button color="primary">Edit</button>
+                            <button 
+                            [disabled]="isEditMode"
+                            (click)="onTudoRemove(tudo.tudoId)"
+                            class="btn btn-sm" mat-stroked-button color="warn">Remove</button>
+                        </div>
+                    </li>
+                </ul>
+
+                <ng-template #noTudo>
+                    <p class="alert alert-warning">
+                        NO Tudo ....
+                    </p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

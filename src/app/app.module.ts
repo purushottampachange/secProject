@@ -11,6 +11,9 @@ import { EventBindingComponent } from './event-binding/event-binding.component';
 import { TudoComponent } from './tudo/tudo.component';
 import { FormsModule } from '@angular/forms'
 import { MatIconModule } from '@angular/material/icon';
+import { Tudo2Component } from './tudo2/tudo2.component';
+import { Tudo3Component } from './tudo3/tudo3.component';
+import { Tudo4Component } from './tudo4/tudo4.component';
 
 
 @NgModule({
@@ -21,6 +24,9 @@ import { MatIconModule } from '@angular/material/icon';
     DatabindingComponent,
     EventBindingComponent,
     TudoComponent,
+    Tudo2Component,
+    Tudo3Component,
+    Tudo4Component,
 
   ],
   imports: [

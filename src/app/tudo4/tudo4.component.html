@@ -1,0 +1,45 @@
+<div class="row mt-4">
+    <div class="col-md-6 mb-4 mb-md-0">
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="tudoItem">Enter tudo</label>
+                    <input #tudoInput type="text" class="form-control">
+                </div>
+                <button *ngIf="!isEditMode" (click)="AddTudo()" mat-raised-button color="primary" class="btn-block">Add
+                    Tudo</button>
+                <button *ngIf="isEditMode" (click)="onTudoSubmit()" mat-raised-button color="accent"
+                    class="btn-block">Update Tudo</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <ul *ngIf="tudoArr.length > 0; else noTudo" class="list-group">
+                    <li *ngFor="let tudo of tudoArr ; trackBy : trackByID"
+                        class="list-group-item d-flex justify-content-between align-items-center">
+                        <strong>{{tudo.tudoItem}}</strong>
+                        <div>
+                            <button (click)="onTudoEdit(tudo)" mat-icon-button color="primary">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+
+                            <button [disabled]="isEditMode" (click)="onTudoRemove(tudo.tudoId)" mat-icon-button
+                                color="warn">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+
+                <ng-template #noTudo>
+                    <p class="alert alert-warning">
+                        No Tudos ....
+                    </p>
+                </ng-template>
+
+            </div>
+        </div>
+    </div>
+</div>
