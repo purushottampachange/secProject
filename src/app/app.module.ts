@@ -8,6 +8,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DatabindingComponent } from './databinding/databinding.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
+import { TudoComponent } from './tudo/tudo.component';
+import { FormsModule } from '@angular/forms'
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -17,12 +20,15 @@ import { EventBindingComponent } from './event-binding/event-binding.component';
     ProductComponent2,
     DatabindingComponent,
     EventBindingComponent,
+    TudoComponent,
 
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    MatIconModule
 
   ],
   providers: [],
