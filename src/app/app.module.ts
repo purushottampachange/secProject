@@ -14,6 +14,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { Tudo2Component } from './tudo2/tudo2.component';
 import { Tudo3Component } from './tudo3/tudo3.component';
 import { Tudo4Component } from './tudo4/tudo4.component';
+import { MovieComponent } from './movie/movie.component';
+import { MatCardModule } from '@angular/material/card'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 
 @NgModule({
@@ -27,6 +30,7 @@ import { Tudo4Component } from './tudo4/tudo4.component';
     Tudo2Component,
     Tudo3Component,
     Tudo4Component,
+    MovieComponent,
 
   ],
   imports: [
@@ -34,7 +38,9 @@ import { Tudo4Component } from './tudo4/tudo4.component';
     BrowserAnimationsModule,
     MatButtonModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
+    MatSnackBarModule
 
   ],
   providers: [],
