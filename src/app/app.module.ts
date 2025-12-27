@@ -16,7 +16,13 @@ import { Tudo3Component } from './tudo3/tudo3.component';
 import { Tudo4Component } from './tudo4/tudo4.component';
 import { MovieComponent } from './movie/movie.component';
 import { MatCardModule } from '@angular/material/card'
-import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { PostCardComponent } from './post-card/post-card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SummaryPipe } from './pipes/summary.pipe';
+import { StudentComponent } from './student/student.component'
+import { MatDialogModule } from '@angular/material/dialog';
+import { GetConfirmComponent } from './shared/components/get-confirm/get-confirm.component'
 
 
 @NgModule({
@@ -31,6 +37,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
     Tudo3Component,
     Tudo4Component,
     MovieComponent,
+    PostCardComponent,
+    SummaryPipe,
+    StudentComponent,
+    GetConfirmComponent,
 
   ],
   imports: [
@@ -40,7 +50,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
     FormsModule,
     MatIconModule,
     MatCardModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    HttpClientModule,
+    MatDialogModule
 
   ],
   providers: [],

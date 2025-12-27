@@ -1,0 +1,75 @@
+<div class="row mb-4">
+    <div class="col-md-6 offset-md-3">
+        <mat-card>
+            <mat-card-content>
+
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" class="form-control" #title>
+                </div>
+
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <input type="text" id="content" class="form-control" #content>
+                </div>
+
+                <div class="form-group">
+                    <label for="userId">userId</label>
+                    <select class="form-control" id="userId" #userId>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+
+                <button *ngIf="!isEditMode" 
+                (click) = "AddPost()"
+                class="btn btn-block" mat-raised-button color="primary">Add Post</button>
+                <button *ngIf="isEditMode" 
+                (click) = "onPostUpdate()"
+                class="btn btn-block" mat-raised-button color="primary">Update Post</button>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div 
+*ngIf = "postArr.length >0 ; else noPost"
+class="row">
+    <div 
+    *ngFor = "let post of postArr ; trackBy : trackById"
+    class="col-md-3 mb-4">
+        <mat-card class="postCard">
+            <mat-card-title>
+                <h6>
+                   {{post.title}}
+                </h6>
+            </mat-card-title>
+            <mat-card-content>
+               {{post.body | summary}}
+            </mat-card-content>
+            <mat-card-actions class="d-flex justify-content-between">
+                <button 
+                (click) = "onPostEdit(post)"
+                class="btn btn-sm" mat-mini-fab color="primary"><mat-icon>edit</mat-icon></button>
+                <button 
+                [disabled]="post.id === Edit_id"
+                (click)="onPostRemove(post.id)"
+                class="btn btn-sm" mat-mini-fab color="warn"><mat-icon>delete</mat-icon></button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+
+<ng-template #noPost>
+<p class="alert alert-warning">
+    no Posts are available
+</p>
+</ng-template>

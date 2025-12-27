@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="text-center font-weight-bold">
+        are you sure to delete this student ?
+    </p>
+
+    <div class="d-flex justify-content-between">
+        <button 
+        (click)="onRemove()"
+        class="btn btn-sm" mat-raised-button color="primary">remove</button>
+        <button 
+        (click)="onClose()"
+        class="btn btn-sm" mat-raised-button color="warn">close</button>
+    </div>
+</body>
+
+</html>
